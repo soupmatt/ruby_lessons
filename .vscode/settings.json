@@ -1,0 +1,7 @@
+{
+  "sorbet.enabled": false,
+  "[ruby]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "testdouble.vscode-standard-ruby"
+  }
+}
