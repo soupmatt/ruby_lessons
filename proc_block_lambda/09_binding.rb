@@ -15,9 +15,11 @@ end
 
 my_inspector = MyInspector.new(456)
 
+# standard:disable Lint/Debugger
 def inspect_proc(&block)
   binding.pry
   yield
 end
+# standard:enable Lint/Debugger
 
 inspect_proc(&my_inspector.make_proc)
