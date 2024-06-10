@@ -1,4 +1,8 @@
-# Sources
+# Proc, Block, and Lambda
+
+Learn about the differences between Proc, Block, and Lambda in Ruby.
+
+## Sources
 
 - https://medium.com/@madelinecorman/blocks-procs-and-lambdas-in-ruby-6204278f5177
 - https://www.writesoftwarewell.com/what-is-binding-in-ruby/
