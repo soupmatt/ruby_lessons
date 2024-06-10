@@ -1,5 +1,7 @@
 # lambdas are a lot like blocks and procs, but with a few key differences.
 # First, we define a lambda with the `lambda` keyword or the `->` operator.
+# a lambda define with `->` is called a stabby lambda.
+# Looks a lot like an anonymous javascript function
 
 l1 = lambda { |x| x * 2 }
 l2 = ->(x) { x * 3 }
@@ -28,7 +30,7 @@ too_few_args(&l2)
 
 check_arg = lambda do |arg|
   if arg.nil?
-    return "You didn't pass an argument!"
+    return "You passed nil as the argument!"
   end
   "You passed an argument! #{arg}"
 end
@@ -40,4 +42,14 @@ check_arg.call(nil)
 
 my_lambda = lambda { |x| x * 2 }
 
-puts my_lambda.is_a?(Proc)
+my_lambda.is_a?(Proc)
+
+# so lambdas are procs, but with a few extra features
+# how do you tell if a proc is a lambda or not?
+# you can use the `lambda?` method
+
+my_lambda = lambda { |x| x * 2 }
+my_lambda.lambda?
+
+my_proc = proc { |x| x * 2 }
+my_proc.lambda?

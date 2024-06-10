@@ -25,15 +25,15 @@ double { |x| puts x * 2 }
 # blocks don't get too bothered if you pass too many arguments
 # they just ignore the extra ones
 
-double { puts "hi mom!" }
-
-# or if you pass too few arguments
-# they just set the missing ones to nil
-
 double do |x, y|
   puts x.inspect
   puts y.inspect
 end
+
+# or if you pass too few arguments
+# they just set the missing ones to nil
+
+double { puts "hi mom!" }
 
 # you can also check if a block was passed to a method
 # by using the block_given? method
@@ -53,12 +53,12 @@ has_block? { puts "hello" }
 # by using the `&` operator
 
 def pass_block(&block)
-  block.call
+  yield
 end
 
 pass_block { puts "hello from a block" }
 
-# you can also pass a block to a method that expects a block
+# you can also pass a block through to a method that expects a block
 # by using the `&` operator
 
 def pass_block_to_block(&)
@@ -67,8 +67,8 @@ end
 
 pass_block_to_block { puts "hello from a block passed to a block" }
 
-# you can also pass a block to a method that doesn't expect a block
-# by using the `&` operator
+# you can to see if a block was passed to a method that expects a block
+# by using the block_given? method
 
 def pass_block_check
   if block_given?

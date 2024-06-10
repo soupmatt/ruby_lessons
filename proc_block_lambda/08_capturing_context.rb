@@ -9,6 +9,10 @@ end
 
 my_proc = make_proc
 
+def puts_value(&proc)
+  puts yield
+end
+
 puts my_proc.call
 
 # this means you can modify the value of a captured variable
@@ -16,6 +20,8 @@ puts my_proc.call
 count = 0
 
 incrementer = proc { count += 1 }
+
+puts count
 
 incrementer.call
 incrementer.call
@@ -25,6 +31,8 @@ puts count
 # lambdas also capture their surrounding context
 
 lambda_incrementer = -> { count += 1 }
+
+puts count
 
 lambda_incrementer.call
 lambda_incrementer.call

@@ -2,7 +2,7 @@
 # how about methods?
 
 class MyCaller
-  def call
+  def call_me
     puts "You called?"
   end
 end
@@ -13,6 +13,6 @@ end
 
 my_caller = MyCaller.new
 
-call_method = my_caller.method(:call)
+method_to_call = my_caller.method(:call_me)
 
-call_the_proc(&call_method)
+call_the_proc(&method_to_call)

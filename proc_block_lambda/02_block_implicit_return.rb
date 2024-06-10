@@ -6,8 +6,6 @@
 end
 
 # in fact, if you try to use an explicit return, you will get an error
-def my_method
-  yield
+[1, 2, 3].each do |x|
+  return x * 2
 end
-
-my_method { return 1 }
